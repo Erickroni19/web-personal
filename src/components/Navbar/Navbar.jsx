@@ -1,9 +1,10 @@
 // import PropTypes from 'prop-types'
+import { ButtonToggle } from "../ButtonToggle/ButtonToggle";
+import { NavItems } from "../NavItems/NavItems";
 import { useState } from "react";
 
-import { ButtonToggle } from "../ButtonToggle/ButtonToggle";
 import "./Navbar.css";
-import { NavItems } from "../NavItems/NavItems";
+import { Link } from "react-router";
 
 export const Navbar = () => {
 
@@ -15,12 +16,11 @@ export const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <h1 className="logo">
+      <Link to="/" className="logo">
         <div className="ern">ERN</div>
         <div className="dev">/DEV</div>
-      </h1>
+      </Link>
       <ButtonToggle isOpen={ isOpen } onToggleMenu={ onToggleMenu }/>
-
       <NavItems isOpen={ isOpen }/>
     </nav>
   )
